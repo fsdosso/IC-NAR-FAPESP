@@ -43,10 +43,24 @@ $G(y_{t-1};\gamma, c) = \frac{1}{1 + \exp{(-\gamma[y_{t-1} - c]})}$
 ├── Resultados/           # Model outputs and predictions
 └── analise/          # Analysis scripts and notebooks
 
+## Descrição dos dados
+Os dados brutos são um data frame contendo mais de 1.400 colunas e quase 10.000 observações, extraídos da bolsa de valores americana. A primeira coluna é a data em que os dados foram observados, e as demais representam ações; cada observação corresponde ao valor de fechamento diário em dólares. Na fase de tratamento dos dados, renomeamos todas as colunas para que apenas o código da ação aparecesse no nome e substituímos todos os valores '-' por NaN. Por fim, criamos outro conjunto de dados, composto por todas as ações que possuem mais de 2.000 valores não NaN e a data, chamado 'dados_nyse_diario_expandido.csv'.
+
+
+
+## Metodologia
+- Leitura e Tratamento dos dados.
+- Estimação e Previsão dos Modelos segundo o método de Rolling Window descrito no relatório.
+   - Rodar o código nas ações de 2000 observações até que seja realizada previsão em 100 ações
+- Cálculo das métricas RMSE e MAE nas condições de não linearidade e primeira autocorrelação significativa.
+- Análise dos resultados.
+- Análise dos resíduos.
+
+
+
+## Resultados
+Após analisar os resultados, descobrimos que o desempenho dos três modelos foi muito similar. Isso significa que a capacidade preditiva nos
 </div>
 
 
 
-
-
-Portanto, a compreensão da importância da análise de resíduos e sua aplicação correta são indispensáveis para qualquer modelagem de  séries temporais, garantindo que as inferências e previsões derivadas desses modelos sejam confiáveis e cientificamente sólidas.
