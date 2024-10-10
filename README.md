@@ -9,7 +9,7 @@ Esse repositório contem os dados e a análise de um estudo comparativo feito ut
   Autoregressivo com Limiar Auto Excitante (SETAR) e Autoregressivo de Transição Suave Logística (LSTAR), aplicados a ações da bolsa americana.
   Esse estudo foi conduzido como parte de um projeto de Iniciação Científica.
 
-
+<!--
 ## Modelos Implementados
 
 ### AR
@@ -33,33 +33,22 @@ $y_t = (\phi_{0,1} + \phi_{1,1}y_{t-1})(1 - G(y_{t-1};\gamma, c)]) \\
 
 em que 
 $G(y_{t-1};\gamma, c) = \frac{1}{1 + \exp{(-\gamma[y_{t-1} - c]})}$
-
-
-## Estrutura do repositório
-├── dados/
-│   ├── bruto/            # Dados originais
-│   └── processado/      # Dados tratados
-├── Estimacao_Previsao/             # Implementação dos três modelos
-├── Resultados/           # Model outputs and predictions
-└── analise/          # Analysis scripts and notebooks
+-->
 
 ## Descrição dos dados
 Os dados brutos são um data frame contendo mais de 1.400 colunas e quase 10.000 observações, extraídos da bolsa de valores americana. A primeira coluna é a data em que os dados foram observados, e as demais representam ações; cada observação corresponde ao valor de fechamento diário em dólares. Na fase de tratamento dos dados, renomeamos todas as colunas para que apenas o código da ação aparecesse no nome e substituímos todos os valores '-' por NaN. Por fim, criamos outro conjunto de dados, composto por todas as ações que possuem mais de 2.000 valores não NaN e a data, chamado 'dados_nyse_diario_expandido.csv'.
 
 
 
-## Metodologia
-- Leitura e Tratamento dos dados.
-- Estimação e Previsão dos Modelos segundo o método de Rolling Window descrito no relatório.
-   - Rodar o código nas ações de 2000 observações até que seja realizada previsão em 100 ações
-- Cálculo das métricas RMSE e MAE nas condições de não linearidade e primeira autocorrelação significativa.
-- Análise dos resultados.
-- Análise dos resíduos.
+## Instrução de execução dos arquivos
+- Abra o diretório Dados e baixe "Limpeza.ipynb" e "economatica_nyse_diario.xlsx"
+- Execute o arquivo "Limpeza.ipynb" e exporte o arquivo "dados_nyse_diario_expandido.csv"
+- Baixe o arquivo "PredicaoExpandido.R" do diretório Estimacao_Previsao. Certifique-se que todos os pacotes necessários estão instalados. 
+- Execute o código até produzir arquivos contendo a predição de 100 ações (apenas um terço das ações vai converjir)
+- Baixe o arquivo "AnaliseResultados.R" da pasta Analise e calcule as métricas RMSE e MAE com os dados gerados do passo anterior
+- Se achar necessário, execute o arquivo "AnaliseResiduos.R" do diretório Analise para obter os gráficos de análise de resíduos.
 
 
-
-## Resultados
-Após analisar os resultados, descobrimos que o desempenho dos três modelos foi muito similar. Isso significa que a capacidade preditiva nos
 </div>
 
 
