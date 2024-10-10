@@ -19,12 +19,12 @@ $Y_t = \phi_0 + \sum_{i = 1}^p \phi_iY_{t-i} + \varepsilon_t$
 ### SETAR
 O modelo Autoregressivo com Limiar Auto Excitante (SETAR) é um modelo de mudança de regimes. No SETAR, assume-se que a transição entre regimes é definida por uma variável pertencente à própria série temporal, especificamente $y_{t-d}$, em que $d > 0$. O modelo é dado por 
 
-$
+\begin{equation}
 y_t = \begin{cases}
 \phi_{0,1} + \phi_{1,1} y_{t-1} + \varepsilon_t & \text{se } q_t \leq c, \\
 \phi_{0,2} + \phi_{1,2} y_{t-1} + \varepsilon_t & \text{se } q_t > c
 \end{cases}
-$
+\end{equation}
 
 ### LSTAR
 O modelo Autoregressivo de Transição Suave Logística (LSTAR) é semelhante ao modelo SETAR, mas pressupõe-se que a mudança de regime é feita de forma contínua por uma função logística que varia de 0 a 1. Sua fórmula é dada por
