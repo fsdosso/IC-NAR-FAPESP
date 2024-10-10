@@ -123,7 +123,7 @@ res_graficos <- function(modelo, acao){ # Função que retorna os quatro gráfic
     path <- paste0("/home/felipe/Documentos/IC/Codigo/Previsao/Expandido/Graficos_Res/",
                    acao, "_", toupper(modelo), "_res.jpeg")
     
-    ggsave(filename = path, plot = final, width = 8, height = 6, dpi = 300)
+    ggsave(filename = path, plot = final, width = 8, height = 6, dpi = 150)
     
     return(final)
 }
